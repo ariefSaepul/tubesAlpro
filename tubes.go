@@ -44,8 +44,50 @@ func main() {
     }
 }
 
-// tes
 
+func menuUtama() {
+    for {
+        fmt.Println("\n=== Menu Utama ===")
+        fmt.Println("1. Tampilkan Data Polusi")
+        fmt.Println("2. Tambah Data Polusi")
+        fmt.Println("3. Edit Data Polusi")
+        fmt.Println("4. Hapus Data Polusi")
+        fmt.Println("5. Cari Data Berdasarkan Bulan")
+        fmt.Println("6. Urutkan Data Berdasarkan Tahun")
+		fmt.Println("7. Cari Data Berdasarkan Tahun") // Tambahan
+		fmt.Println("8. Kembali ke Halaman Awal")
+		fmt.Println("9. Keluar")
+        fmt.Print("Pilih menu: ")
+
+        var pilihan int
+        fmt.Scan(&pilihan)
+
+        switch pilihan {
+        case 1:
+            tampilkanData()
+        case 2:
+            tambahData()
+        case 3:
+            editData()
+        case 4:
+            hapusData()
+        case 5:
+            cariBerdasarkanBulan()
+        case 6:
+    sortDataBerdasarkanTahun()
+		case 7:
+			cariBerdasarkanTahun()
+		case 8:
+			main()
+			return
+		case 9:
+			fmt.Println("Terima kasih telah menggunakan aplikasi!")
+		return
+        default:
+            fmt.Println("Pilihan tidak valid!")
+        }
+    }
+}
 
 
 func initSampleData() {
